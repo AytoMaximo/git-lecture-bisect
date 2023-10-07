@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace Bisect
             {new DateTime(2022, 2, 1), 0.86M},
             {new DateTime(2022, 3, 1), 0.87M}
         };
+
+        private List<string> favorites = new List<string>();
 
         public decimal Convert(decimal amount, decimal converionRate)
         {
@@ -38,6 +41,27 @@ namespace Bisect
             return historicalRates.TryGetValue(date, out decimal rate) ? 
                 rate : 
                 throw new ArgumentException("Заданное историческое значение не было найдено в БД");
+        }
+
+        public void AddToFavorites(string currencyCode)
+        {
+            if (!favorites.Contains(currencyCode))
+            {
+                favorites.Add(currencyCode);
+            }
+        }
+
+        public void RemoveFromFavorites(string currencyCode)
+        {
+            if (favorites.Contains(currencyCode))
+            {
+                favorites.Remove(currencyCode);
+            }
+        }
+
+        public IEnumerable<string> GetFavorites()
+        {
+            return favorites.AsReadOnly();
         }
     }
 }

@@ -7,17 +7,14 @@ class Program
     {
         CurrencyConverter converter= new CurrencyConverter();
 
-        try
-        {
-            var convertedAmount = converter.Convert(100, 0.005M);
-            Console.WriteLine(convertedAmount);
-        }
-        catch (ArgumentException e)
-        {
-            Console.WriteLine(e.Message);
-        }
+        converter.AddToFavorites("USD");
+        converter.AddToFavorites("EUR");
 
-        //decimal convertedAmount = converter.Convert(100, 0.85M);
-        //Console.WriteLine(convertedAmount.ToString());
+        var favorites = converter.GetFavorites();
+        Console.WriteLine("Favorite currencies:");
+        foreach (var fav in favorites)
+        {
+            Console.WriteLine(fav);
+        }
     }
 }
