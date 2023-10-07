@@ -29,7 +29,8 @@ namespace Bisect
 
         private void ValidateRate(decimal rate)
         {
-            //Здесь нет реальной проверки, просто заглушка для возможных будущих проверок
+            if (rate < 0.01M)
+                throw new ArgumentException("Предлагаемый коэффициент кажется подозрительно маленьким, перепроверьте плиз");
         }
 
         public decimal GetHistoricalRate(DateTime date)
