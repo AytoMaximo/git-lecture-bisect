@@ -19,6 +19,11 @@ namespace Bisect
         public decimal Convert(decimal amount, decimal converionRate)
         {
             ValidateRate(converionRate);
+            return PerformConversion(amount, converionRate);
+        }
+
+        private decimal PerformConversion(decimal amount, decimal converionRate)
+        {
             return amount * converionRate;
         }
 
