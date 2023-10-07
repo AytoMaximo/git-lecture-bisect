@@ -10,7 +10,13 @@ namespace Bisect
     {
         public decimal Convert(decimal amount, decimal converionRate)
         {
+            ValidateRate(converionRate);
             return amount * converionRate;
+        }
+
+        private void ValidateRate(decimal rate)
+        {
+            //Здесь нет реальной проверки, просто заглушка для возможных будущих проверок
         }
     }
 }
