@@ -17,7 +17,8 @@ namespace Bisect
         {
             {new DateTime(2022, 1,1), 0.85M },
             {new DateTime(2022, 2, 1), 0.86M},
-            {new DateTime(2022, 3, 1), 0.87M}
+            {new DateTime(2022, 3, 1), 0.87M},
+            {new DateTime(2022, 4, 1), 0.865M}
         };
 
         private List<string> favorites = new List<string>();
