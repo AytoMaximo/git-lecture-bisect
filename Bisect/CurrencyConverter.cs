@@ -22,6 +22,12 @@ namespace Bisect
 
         private List<string> favorites = new List<string>();
 
+        /// <summary>
+        /// Основная функция конвертации валют
+        /// </summary>
+        /// <param name="amount"></param>
+        /// <param name="converionRate"></param>
+        /// <returns></returns>
         public decimal Convert(decimal amount, decimal converionRate)
         {
             ValidateRate(converionRate);
