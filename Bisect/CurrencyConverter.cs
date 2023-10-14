@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Bisect
 {
+    /// <summary>
+    /// Базовый класс конвертации валют
+    /// </summary>
     internal class CurrencyConverter
     {
         //Mock
